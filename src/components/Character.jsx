@@ -18,9 +18,18 @@ function Character(props) {
   if (!wantMore) {
     return (
       <div id={props.name} className='character-card'>
-        <h1>{props.name}</h1>
-        <p>{props.status}</p>
-        <button onClick={handleClick} name={props.name} id='show-more'>
+        <img src={props.img} alt='' />
+        <h2>{props.name}</h2>
+        <p>
+          {props.status} - {props.species}
+        </p>
+
+        <button
+          className='select-button'
+          onClick={handleClick}
+          name={props.name}
+          id='show-more'
+        >
           Find out More
         </button>
       </div>
@@ -28,10 +37,22 @@ function Character(props) {
   } else {
     return (
       <div id={props.name} className='character-card'>
-        <h1>{props.name}</h1>
-        <p>{props.status}</p>
-        <p>This is now displaying additional information</p>
-        <button onClick={handleClick} name={props.name} id='show-less'>
+        <img src={props.img} alt='Character image' className='character-img' />
+        <h2>{props.name}</h2>
+        <p>
+          {props.status} - {props.species}
+        </p>
+        <div className='extra-info'>
+          <p>Number of Appearances: {props.appearances}</p>
+          <p>Gender: {props.gender}</p>
+          <p>Place of Origin: {props.origin}</p>
+        </div>
+        <button
+          className='select-button'
+          onClick={handleClick}
+          name={props.name}
+          id='show-less'
+        >
           Show less
         </button>
       </div>

@@ -1,5 +1,74 @@
+body {
+  background-image: url('./assets/background.png');
+  background-repeat: no-repeat;
+  background-color: #262c3a;
+  font-family: 'Space Mono', mono space;
+  color: white;
+  padding: 25px;
+}
+
+.App {
+  width: 63%;
+}
+
+.status-field {
+  width: fit-content;
+}
+
 .character-card {
   border: 2px solid black;
-  width: 30%;
+  width: 350px;
   margin: 5px;
+  text-align: center;
+  padding: 10px;
+}
+
+.character-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+@media (max-width: 1510px) {
+  .character-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+button {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.page-buttons {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-button {
+  margin: 10px;
+}
+
+.page-button:hover {
+  background-color: grey;
+}
+
+.select-button {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

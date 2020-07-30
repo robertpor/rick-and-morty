@@ -6,7 +6,7 @@ function Button(props) {
   }
 
   return (
-    <button onClick={handleClick} name={props.function}>
+    <button className='page-button' onClick={handleClick} name={props.function}>
       {props.function}
     </button>
   );

@@ -61,16 +61,30 @@ function CharacterList() {
   return (
     <div>
       <FilterForm onSubmit={handleSubmit} />
-      <Button function='back' key='' onClick={handleClick} />
-      <Button function='next' onClick={handleClick} />
-      {characterList.results.map((character, index) => (
-        <Character
-          key={index}
-          name={character.name}
-          status={character.status}
-          url={character.url}
-        />
-      ))}
+      <div className='page-buttons'>
+        <Button function='back' key='' onClick={handleClick} />
+        <Button function='next' onClick={handleClick} />
+      </div>
+
+      <div className='character-list'>
+        {characterList.results.map((character, index) => (
+          <Character
+            key={index}
+            name={character.name}
+            img={character.image}
+            status={character.status}
+            origin={character.origin.name}
+            species={character.species}
+            gender={character.gender}
+            appearances={character.episode.length}
+            url={character.url}
+          />
+        ))}
+      </div>
+      <div className='page-buttons'>
+        <Button function='back' key='' onClick={handleClick} />
+        <Button function='next' onClick={handleClick} />
+      </div>
     </div>
   );
 }
