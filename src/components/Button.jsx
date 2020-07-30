@@ -1,11 +1,15 @@
 import React from 'react';
 
 function Button(props) {
-  function handleClick() {
-    props.handlePageChange(props.function);
+  function handleClick(e) {
+    props.onClick(e.target.name);
   }
 
-  return <button onClick={handleClick}>{props.function}</button>;
+  return (
+    <button onClick={handleClick} name={props.function}>
+      {props.function}
+    </button>
+  );
 }
 
 export default Button;
