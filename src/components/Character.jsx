@@ -18,7 +18,8 @@ function Character(props) {
   if (!wantMore) {
     return (
       <div id={props.name} className='character-card'>
-        <img src={props.img} alt='' />
+        <img className='character-img' src={props.img} alt={props.name} />
+
         <h2>{props.name}</h2>
         <p>
           {props.status} - {props.species}
@@ -37,7 +38,7 @@ function Character(props) {
   } else {
     return (
       <div id={props.name} className='character-card'>
-        <img src={props.img} alt='Character image' className='character-img' />
+        <img className='character-img' src={props.img} alt={props.name} />
         <h2>{props.name}</h2>
         <p>
           {props.status} - {props.species}

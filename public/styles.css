@@ -1,74 +1,265 @@
+/* Global Styles */
 body {
-  background-image: url('./assets/background.png');
-  background-repeat: no-repeat;
   background-color: #262c3a;
   font-family: 'Space Mono', mono space;
   color: white;
-  padding: 25px;
-}
-
-.App {
-  width: 63%;
-}
-
-.status-field {
-  width: fit-content;
-}
-
-.character-card {
-  border: 2px solid black;
-  width: 350px;
-  margin: 5px;
-  text-align: center;
-  padding: 10px;
-}
-
-.character-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 20px;
-}
-
-@media (max-width: 1510px) {
-  .character-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-  }
 }
 
 button {
-  background-color: black; /* Green */
+  background-color: black;
   border: none;
   color: white;
   padding: 15px 32px;
+  margin: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
 
-.page-buttons {
-  text-align: center;
-  padding: 20px;
+/* Largest Size */
+@media (min-width: 1500px) {
+  body {
+    padding: 25px;
+    background-image: url('./assets/background.png');
+    background-repeat: no-repeat;
+  }
+
+  .heading {
+    width: 1000px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-100px);
+  }
+
+  form {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    height: 300px;
+    width: 400px;
+    margin-bottom: 50px;
+  }
+
+  form > * {
+    margin: 5px;
+  }
+
+  form > input {
+    width: 50%;
+  }
+
+  select {
+    width: 150px;
+    padding: 15px 0px 15px 0;
+    text-align: center;
+    font-family: 'Space Mono', mono space;
+  }
+
+  .search-input {
+    text-align: center;
+    border: 2px black solid;
+  }
+
+  .status {
+    width: 300px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+  }
+
+  .App {
+    width: 1000px;
+    position: absolute;
+    text-align: center;
+  }
+
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+  }
+
+  .character-card {
+    border: 2px solid black;
+    width: 29%;
+    padding: 10px 2px 10px 2px;
+    margin: 30px;
+    text-align: center;
+    flex: 1;
+  }
+
+  .character-img {
+    width: 200px;
+  }
+
+  .page-buttons {
+    position: relative;
+    width: 212.5px;
+    left: 50%;
+    transform: translateX(-106.25px);
+  }
 }
 
-.page-button {
-  margin: 10px;
+/* Middle Sizes  Size */
+@media (min-width: 450px) and (max-width: 1499px) {
+  body {
+    padding: 25px;
+    text-align: center;
+  }
+
+  input[type='radio'] {
+    height: 20px;
+    width: 20px;
+    vertical-align: sub;
+  }
+
+  .heading {
+  }
+
+  form {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    height: 300px;
+    width: 400px;
+    margin-bottom: 50px;
+  }
+
+  form > * {
+    margin: 5px;
+  }
+
+  form > input {
+    width: 50%;
+  }
+
+  select {
+    width: 150px;
+    padding: 15px 0px 15px 0;
+    text-align: center;
+    font-family: 'Space Mono', mono space;
+  }
+
+  .search-input {
+    text-align: center;
+    border: 2px black solid;
+  }
+
+  .status {
+    width: 300px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+  }
+
+  .App {
+    position: absolute;
+    text-align: center;
+  }
+
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+  }
+
+  .character-card {
+    border: 2px solid black;
+    width: 29%;
+    padding: 10px 2px 10px 2px;
+    margin: 30px;
+    text-align: center;
+    flex: 1;
+  }
+
+  .character-img {
+    width: 200px;
+  }
+
+  .page-buttons {
+    position: relative;
+    width: 212.5px;
+    left: 50%;
+    transform: translateX(-106.25px);
+  }
 }
 
-.page-button:hover {
-  background-color: grey;
-}
+/* Mobile Size */
+@media (min-width: 0px) and (max-width: 449px) {
+  body {
+    text-align: center;
+  }
 
-.select-button {
-  background-color: black; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  input[type='radio'] {
+    height: 20px;
+    width: 20px;
+    vertical-align: sub;
+  }
+
+  form {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  form > * {
+    margin: 5px;
+  }
+
+  form > input {
+    width: 50%;
+  }
+
+  select {
+    width: 150px;
+    padding: 15px 0px 15px 0;
+    text-align: center;
+    font-family: 'Space Mono', mono space;
+  }
+
+  .search-input {
+    text-align: center;
+    border: 2px black solid;
+  }
+
+  .status {
+    width: 300px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+  }
+
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+    width: 100%;
+  }
+
+  .character-card {
+    border: 2px solid black;
+    padding: 10px 2px 10px 2px;
+    margin: 5px 25px;
+    text-align: center;
+    flex: 1;
+  }
+
+  .character-img {
+    width: 200px;
+  }
+
+  .page-buttons {
+    position: relative;
+    width: 212.5px;
+    left: 50%;
+    transform: translateX(-106.25px);
+  }
 }

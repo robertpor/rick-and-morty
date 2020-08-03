@@ -21,12 +21,14 @@ function CharacterList() {
       axios.get(newQuery).then((res) => {
         setCharacterList(res.data);
       });
+      document.documentElement.scrollTop = 400;
     } else if (clickType === 'back') {
       const newQuery = characterList.info.prev;
       if (newQuery !== null) {
         axios.get(newQuery).then((res) => {
           setCharacterList(res.data);
         });
+        document.documentElement.scrollTop = 400;
       }
     }
   }
@@ -59,7 +61,7 @@ function CharacterList() {
   }
 
   return (
-    <div>
+    <div className='character-app'>
       <FilterForm onSubmit={handleSubmit} />
       <div className='page-buttons'>
         <Button function='back' key='' onClick={handleClick} />
@@ -82,7 +84,7 @@ function CharacterList() {
         ))}
       </div>
       <div className='page-buttons'>
-        <Button function='back' key='' onClick={handleClick} />
+        <Button function='back' onClick={handleClick} />
         <Button function='next' onClick={handleClick} />
       </div>
     </div>

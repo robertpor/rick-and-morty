@@ -29,30 +29,39 @@ function FilterForm(props) {
 
   return (
     <form>
-      <input type='text' id='input-text' onChange={handleNameChange} />
-      <fieldset className='status-field' id='status-fieldset'>
-        <div onChange={handleStatusChange}>
-          <input
-            type='radio'
-            id='dead-or-alive'
-            name='status'
-            value='dead-or-alive'
-          />
-          <label htmlFor='dead-or-alive'>Dead or Alive</label>
-          <input type='radio' id='alive' name='status' value='alive' />
-          <label htmlFor='alive'>Alive</label>
-          <input type='radio' id='dead' name='status' value='dead' />
-          <label htmlFor='dead'>Dead</label>
-        </div>
-      </fieldset>
-
-      <select name='gender' id='gender' onChange={handleGenderChange}>
+      <h3>Filter and Search Characters</h3>
+      <input
+        className='search-input'
+        type='text'
+        id='input-text'
+        placeholder='Search Name'
+        onChange={handleNameChange}
+      />
+      <select
+        name='gender'
+        id='gender'
+        onChange={handleGenderChange}
+        placeholder='Select Gender &#5121;'
+      >
+        <option value='all'>All Genders</option>
         <option value='female'>Female</option>
         <option value='male'>Male</option>
         <option value='genderless'>Genderless</option>
         <option value='unknown'>Unknown</option>
-        <option value='all'>All of the above</option>
       </select>
+      <div className='status' onChange={handleStatusChange}>
+        <input
+          type='radio'
+          id='dead-or-alive'
+          name='status'
+          value='dead-or-alive'
+        />
+        <label htmlFor='dead-or-alive'>Dead or Alive</label>
+        <input type='radio' id='alive' name='status' value='alive' />
+        <label htmlFor='alive'>Alive</label>
+        <input type='radio' id='dead' name='status' value='dead' />
+        <label htmlFor='dead'>Dead</label>
+      </div>
 
       <button type='submit' onClick={handleClick}>
         Search
