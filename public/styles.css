@@ -263,3 +263,9 @@ button {
     transform: translateX(-106.25px);
   }
 }
+
+@media (max-width: 590px) {
+  .character-img {
+    width: 140px;
+  }
+}
